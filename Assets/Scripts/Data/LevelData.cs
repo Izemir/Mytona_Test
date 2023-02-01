@@ -21,7 +21,8 @@ public class LevelData : ScriptableObject
 	}
 	[TextArea(16,16)]
 	public string CharMap;
-
-	public List<WaveData> WaveDatas;
+	[Space]
+	[Header("X - mob id, Y - mob count")]
+    public List<WaveData> WaveDatas;
 	public float WaveInterval = 5f;
 }

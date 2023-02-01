@@ -69,9 +69,9 @@ public class LevelRunner : MonoBehaviour
 	{
 		foreach (var waveData in waveDatas)
 		{
-			foreach (var keyValue in waveData.WaveMobNCount)
+			foreach (var mobData in waveData.WaveMobNCount)
 			{
-				for (int i = 0; i < keyValue.y; i++)
+				for (int i = 0; i < mobData.y; i++)
 				{
 					while (_mobsCount >= MaxMobCount)
 					{
@@ -80,7 +80,7 @@ public class LevelRunner : MonoBehaviour
 
 					EventBus<SpawnMobMessage>.Pub(new SpawnMobMessage()
 					{
-						Type = keyValue.x
+						Type = mobData.x
 					});
 					yield return new WaitForSeconds(SpawnInterval);
 				}

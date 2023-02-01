@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class Mob : MonoBehaviour
 {
+    [SerializeField] protected int MobId=0;
     [SerializeField] protected float Damage = 1;
     [SerializeField] protected float MoveSpeed = 3.5f;
     [SerializeField] protected float Health = 3;
     [SerializeField] protected float MaxHealth = 3;
     
     private Action<float, float> OnHPChange = null;
+
+    public int GetId()
+    {
+        return MobId;
+    }
 
     public float GetDamage()
     {
